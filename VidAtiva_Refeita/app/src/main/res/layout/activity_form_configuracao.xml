@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="1100dp"
+            tools:context=".Form_Configuracao">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="35dp" />
+
+            <View
+                android:id="@+id/topView"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:background="@color/purple_200"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:background="@drawable/ic_wave"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/topView" />
+
+            <TextView
+                android:id="@+id/text_configuracao"
+                android:layout_width="355dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:text="@string/text_configuracao"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/topView" />
+
+            <TextView
+                android:id="@+id/text_exercicios"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="100dp"
+                android:background="@drawable/rounded_textview"
+                android:drawableLeft="@drawable/ic_exercicio"
+                android:drawablePadding="10dp"
+                android:padding="15dp"
+                android:text="@string/exercicios"
+                android:textColor="#311B92"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RadioGroup
+                android:id="@+id/rg_exercicio"
+                android:layout_width="363dp"
+                android:layout_height="145dp"
+
+                app:layout_constraintStart_toStartOf="@id/guia"
+                app:layout_constraintTop_toBottomOf="@id/text_exercicios">
+
+                <RadioButton
+                    android:id="@+id/rb_caminhada"
+                    android:layout_width="365dp"
+                    android:layout_height="48dp"
+                    android:buttonTint="@color/purple_200"
+                    android:text="@string/caminhada"
+                    android:textColor="@drawable/style_rbutton"
+                    tools:ignore="UsingOnClickInXml" />
+
+                <RadioButton
+                    android:id="@+id/rb_corrida"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/purple_200"
+                    android:text="@string/corrida"
+                    android:textColor="@drawable/style_rbutton"
+                    tools:ignore="UsingOnClickInXml" />
+
+                <RadioButton
+                    android:id="@+id/rb_bicicleta"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/purple_200"
+                    android:text="@string/bicicleta"
+                    android:textColor="@drawable/style_rbutton"
+                    tools:ignore="UsingOnClickInXml" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/text_unidVelocidade"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/rounded_textview"
+                android:drawableLeft="@drawable/ic_velocidade"
+                android:drawablePadding="10dp"
+                android:padding="15dp"
+                android:text="@string/velocidade"
+                android:textColor="@color/purple_700"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@id/guia"
+                app:layout_constraintTop_toBottomOf="@id/rg_exercicio" />
+
+            <RadioGroup
+                android:id="@+id/rg_unidade_velocidade"
+                android:layout_width="350dp"
+                android:layout_height="95dp"
+                app:layout_constraintStart_toStartOf="@id/guia"
+                app:layout_constraintTop_toBottomOf="@id/text_unidVelocidade">
+
+                <RadioButton
+                    android:id="@+id/rb_km"
+                    android:layout_width="365dp"
+                    android:layout_height="48dp"
+                    android:buttonTint="@color/purple_200"
+                    android:text="@string/km"
+                    android:textColor="@drawable/style_rbutton" />
+
+                <RadioButton
+                    android:id="@+id/rb_metro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/purple_200"
+                    android:text="@string/metro"
+                    android:textColor="@drawable/style_rbutton" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/text_orientacao_mapa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/rounded_textview"
+                android:drawableLeft="@drawable/ic_orientacaomapa"
+                android:drawablePadding="10dp"
+                android:padding="15dp"
+                android:text="@string/orientacaomapa"
+                android:textColor="@color/purple_700"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@id/guia"
+                app:layout_constraintTop_toBottomOf="@id/rg_unidade_velocidade" />
+
+            <RadioGroup
+                android:id="@+id/rg_orientacao_mapa"
+                android:layout_width="365dp"
+                android:layout_height="141dp"
+                app:layout_constraintStart_toStartOf="@id/guia"
+                app:layout_constraintTop_toBottomOf="@id/text_orientacao_mapa">
+
+                <RadioButton
+                    android:id="@+id/rb_nenhuma"
+                    android:layout_width="365dp"
+                    android:layout_height="48dp"
+                    android:buttonTint="@color/purple_200"
+                    android:text="@string/nenhuma"
+                    android:textColor="@drawable/style_rbutton" />
+
+                <RadioButton
+                    android:id="@+id/rb_north"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/purple_200"
+                    android:text="@string/norte"
+                    android:textColor="@drawable/style_rbutton" />
+
+                <RadioButton
+                    android:id="@+id/rb_course"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/purple_200"
+                    android:text="@string/course"
+                    android:textColor="@drawable/style_rbutton" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/text_tipo_mapa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/rounded_textview"
+                android:drawableLeft="@drawable/ic_tipo_mapa"
+                android:drawablePadding="10dp"
+                android:padding="15dp"
+                android:text="@string/tipomapa"
+                android:textColor="@color/purple_700"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@id/guia"
+                app:layout_constraintTop_toBottomOf="@id/rg_orientacao_mapa" />
+
+            <RadioGroup
+                android:id="@+id/rg_tipo_mapa"
+                android:layout_width="368dp"
+                android:layout_height="96dp"
+                app:layout_constraintStart_toStartOf="@id/guia"
+                app:layout_constraintTop_toBottomOf="@id/text_tipo_mapa">
+
+                <RadioButton
+                    android:id="@+id/rb_vetorial"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/purple_200"
+                    android:text="@string/vetorial"
+                    android:textColor="@drawable/style_rbutton" />
+
+                <RadioButton
+                    android:id="@+id/rb_satelite"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/purple_200"
+                    android:text="@string/satelite"
+                    android:textColor="@drawable/style_rbutton" />
+            </RadioGroup>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/bt_salvar_preferencias"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/bt_salvar_pref"
+                app:cornerRadius="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rg_tipo_mapa"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/bt_limpar_preferencias"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                android:onClick="cleanPreferences"
+                android:text="@string/bt_limpar_pref"
+                app:cornerRadius="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bt_salvar_preferencias"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+</ScrollView>

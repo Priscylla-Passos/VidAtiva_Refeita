@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Form_Cadastro">
+
+    <View
+        android:id="@+id/background"
+        android:layout_width="411dp"
+        android:layout_height="276dp"
+        android:layout_marginBottom="496dp"
+        android:background="@drawable/background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/gif"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/gif"
+        android:layout_width="386dp"
+        android:layout_height="272dp"
+        android:layout_marginBottom="500dp"
+        android:contentDescription="@string/logo"
+        android:src="@drawable/logowhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="ImageContrastCheck" />
+
+    <TextView
+        android:id="@+id/textcadastro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="@string/cadastro"
+        android:textColor="@color/purple_200"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gif" />
+
+    <View
+        android:id="@+id/containerComponents"
+        style="@style/ContainerComponents"
+        android:layout_height="360dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gif"
+        app:layout_constraintVertical_bias="0.712" />
+
+    <EditText
+        android:id="@+id/edit_nome"
+        style="@style/Edit_Text"
+        android:hint="@string/nome"
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="@+id/containerComponents"
+        app:layout_constraintEnd_toEndOf="@+id/containerComponents"
+        app:layout_constraintTop_toTopOf="@id/containerComponents"
+        />
+
+    <EditText
+        android:id="@+id/edit_email"
+        style="@style/Edit_Text"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintStart_toStartOf="@+id/containerComponents"
+        app:layout_constraintEnd_toEndOf="@+id/containerComponents"
+        app:layout_constraintTop_toBottomOf="@id/edit_nome"
+        />
+
+    <EditText
+        android:id="@+id/edit_senha"
+        style="@style/Edit_Text"
+        android:hint="@string/senha"
+        android:inputType="numberPassword"
+        app:layout_constraintStart_toStartOf="@+id/containerComponents"
+        app:layout_constraintEnd_toEndOf="@+id/containerComponents"
+        app:layout_constraintTop_toBottomOf="@id/edit_email"
+        />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_cadastrar"
+        style="@style/Button_Perfil"
+        android:layout_width="303dp"
+        android:layout_height="wrap_content"
+        android:text="@string/cadastrar"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="10dp"
+        android:padding="20dp"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_senha"
+
+        />
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Priscilla/AndroidStudioProjects/VidAtiva_Refeita/app/src/main/res/drawable/background.xml" value="0.2" />
+        <entry key="..\:/Users/Priscilla/AndroidStudioProjects/VidAtiva_Refeita/app/src/main/res/drawable/button_perfil.xml" value="0.2385" />
+        <entry key="..\:/Users/Priscilla/AndroidStudioProjects/VidAtiva_Refeita/app/src/main/res/drawable/constainer_user.xml" value="0.123" />
+        <entry key="..\:/Users/Priscilla/AndroidStudioProjects/VidAtiva_Refeita/app/src/main/res/drawable/container_components.xml" value="0.2235" />
+        <entry key="..\:/Users/Priscilla/AndroidStudioProjects/VidAtiva_Refeita/app/src/main/res/drawable/edit_text.xml" value="0.2385" />
+        <entry key="..\:/Users/Priscilla/AndroidStudioProjects/VidAtiva_Refeita/app/src/main/res/drawable/ic_baseline_language_24.xml" value="0.2385" />
+        <entry key="..\:/Users/Priscilla/AndroidStudioProjects/VidAtiva_Refeita/app/src/main/res/drawable/ic_close.xml" value="0.2385" />
+        <entry key="..\:/Users/Priscilla/AndroidStudioProjects/VidAtiva_Refeita/app/src/main/res/drawable/ic_historico_transparente.xml" value="0.2775" />
+        <entry key="..\:/Users/Priscilla/AndroidStudioProjects/VidAtiva_Refeita/app/src/main/res/drawable/ic_historico_white.xml" value="0.192" />
+        <entry key="..\:/Users/Priscilla/AndroidStudioProjects/VidAtiva_Refeita/app/src/main/res/drawable/ic_icone_sobre.xml" value="0.2775" />
+        <entry key="..\:/Users/Priscilla/AndroidStudioProjects/VidAtiva_Refeita/app/src/main/res/drawable/ic_language.xml" value="0.2385" />
+        <entry key="..\:/Users/Priscilla/AndroidStudioProjects/VidAtiva_Refeita/app/src/main/res/drawable/ic_person.xml" value="0.198" />
+        <entry key="..\:/Users/Priscilla/AndroidStudioProjects/VidAtiva_Refeita/app/src/main/res/drawable/ic_sobre.xml" value="0.2385" />
+        <entry key="..\:/Users/Priscilla/AndroidStudioProjects/VidAtiva_Refeita/app/src/main/res/drawable/ic_wave.xml" value="0.1855" />
+        <entry key="..\:/Users/Priscilla/AndroidStudioProjects/VidAtiva_Refeita/app/src/main/res/drawable/ic_wave__1_.xml" value="0.1855" />
+        <entry key="..\:/Users/Priscilla/AndroidStudioProjects/VidAtiva_Refeita/app/src/main/res/drawable/style_rbutton.xml" value="0.228" />
+        <entry key="..\:/Users/Priscilla/AndroidStudioProjects/VidAtiva_Refeita/app/src/main/res/layout/activity_form_cadastro.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Priscilla/AndroidStudioProjects/VidAtiva_Refeita/app/src/main/res/layout/activity_form_configuracao.xml" value="0.264" />
+        <entry key="..\:/Users/Priscilla/AndroidStudioProjects/VidAtiva_Refeita/app/src/main/res/layout/activity_form_historico.xml" value="0.17153284671532848" />
+        <entry key="..\:/Users/Priscilla/AndroidStudioProjects/VidAtiva_Refeita/app/src/main/res/layout/activity_form_home.xml" value="0.2" />
+        <entry key="..\:/Users/Priscilla/AndroidStudioProjects/VidAtiva_Refeita/app/src/main/res/layout/activity_form_login.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Priscilla/AndroidStudioProjects/VidAtiva_Refeita/app/src/main/res/layout/activity_form_monitoramento.xml" value="0.23055555555555557" />
+        <entry key="..\:/Users/Priscilla/AndroidStudioProjects/VidAtiva_Refeita/app/src/main/res/layout/activity_form_perfil.xml" value="0.264" />
+        <entry key="..\:/Users/Priscilla/AndroidStudioProjects/VidAtiva_Refeita/app/src/main/res/layout/activity_form_sobre.xml" value="0.264" />
+        <entry key="..\:/Users/Priscilla/AndroidStudioProjects/VidAtiva_Refeita/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/Priscilla/AndroidStudioProjects/VidAtiva_Refeita/app/src/main/res/layout/activity_maps_monitoramento.xml" value="0.264" />
+        <entry key="..\:/Users/Priscilla/AndroidStudioProjects/VidAtiva_Refeita/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.137" />
+        <entry key="..\:/Users/Priscilla/AndroidStudioProjects/VidAtiva_Refeita/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.137" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

@@ -1,0 +1,81 @@
+<resources>
+    <string name="app_name">VidAtiva</string>
+    <!-- Titulos e Home-->
+    <string name="app_tipo">MONITORAMENTO DE EXERCÍCIOS FÍSICOS</string>
+    <string name="card_perfil">PERFIL</string>
+    <string name="card_configuracao">CONFIGURAÇÃO</string>
+    <string name="card_monitoramento">MONITORAMENTO</string>
+    <string name="card_historico">HISTÓRICO</string>
+
+    <!-- Botão home-->
+    <string name="logo">LogoMarca</string>
+    <string name="actions">Actions</string>
+    <string name="logout">Logout</string>
+
+    <!--Sobre-->
+    <string name="versao">Versão do Aplicativo: 1.0</string>
+    <string name="android">Versão do Android: 11</string>
+    <string name="desenvolvedor">DESENVOLVEDORES:</string>
+    <string name="creditos">CRÉDITOS</string>
+    <string name="textocreditos">Este aplicativo tem como finalidade possibilitar ao usuário o monitoramento de exercícios físicos, sua posição em tempo real e a apresentação do seu histórico de exercícios ao longo do tempo. as opções de visualização são configuráveis e é possivel acessar informações de posicionamento via satelíte</string>
+
+   <!--Perfil-->
+    <string name="perfil">PERFIL</string>
+    <string name="nome">Nome</string>
+    <string name="dtnascimento">Data de Nascimento</string>
+    <string name="sexo">Sexo</string>
+    <string name="altura">Altura</string>
+    <string name="peso">Peso</string>
+    <string name="salvar">Salvar</string>
+
+    <!--Screenn-->
+    <string name="bt_login">LOGIN</string>
+    <string name="textlogin">Não tem conta?</string>
+    <string name="link">Crie aqui.</string>
+
+    <!--Login-->
+    <string name="email">Email</string>
+    <string name="senha">Senha</string>
+    <string name="entrar">ENTRAR</string>
+    <string name="entrardados">Entre com seus dados</string>
+
+    <!--Cadastro-->
+    <string name="cadastro">CADASTRE-SE</string>
+    <string name="cadastrar">CADASTRAR</string>
+
+
+    <!--Configuração -->
+    <string name="exercicios">EXERCÍCIOS</string>
+    <string name="caminhada">Caminhada</string>
+    <string name="corrida">Corrida</string>
+    <string name="bicicleta">Bicicleta</string>
+
+    <string name="velocidade">UNIDADE DE VELOCIDADE</string>
+    <string name="km">Km/h</string>
+    <string name="metro">m/s</string>
+
+    <string name="orientacaomapa">ORIENTAÇÃO DO MAPA</string>
+    <string name="nenhuma">Nenhuma</string>
+    <string name="norte">North Up</string>
+    <string name="course">Course Up</string>
+
+    <string name="tipomapa">TIPO DO MAPA</string>
+    <string name="vetorial">Vetorial</string>
+    <string name="satelite">Satélite</string>
+
+    <!--Botões configuração-->
+    <string name="bt_salvar_pref">SALVAR</string>
+    <string name="bt_limpar_pref">LIMPAR</string>
+    <string name="text_configuracao">CONFIGURAÇÃO</string>
+
+    <!--    Monitoramento-->
+    <string name="title_activity_maps_monitoramento">MapsMonitoramento</string>
+    <string name="barra_status_titulo">Monitoramento</string>
+    <string name="velocidade_instantanea">Velocidade Instantânea: </string>
+    <string name="cronometro">Cronômetro: </string>
+    <string name="tempo_transcorrido">Tempo Transcorrido: </string>
+    <string name="distancia">Distancia Total:</string>
+    <string name="bt_localização">LOCALIZAR</string>
+    <string name="bt_iniciar">INICIAR</string>
+    <string name="bt_parar">PARAR</string>
+</resources>

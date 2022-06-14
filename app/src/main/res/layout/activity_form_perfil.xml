@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Form_Perfil">
+
+    <View
+        android:id="@+id/topView"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:background="@color/purple_200"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:background="@drawable/ic_wave"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topView" />
+
+    <View
+        android:id="@+id/containerUser"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/constainer_user"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_user"
+        app:layout_constraintBottom_toBottomOf="@id/containerUser"
+        app:layout_constraintStart_toStartOf="@id/containerUser"
+        app:layout_constraintEnd_toEndOf="@id/containerUser"
+        app:layout_constraintTop_toTopOf="@id/containerUser"/>
+
+    <TextView
+        android:id="@+id/text_perfil"
+        android:layout_width="355dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/perfil"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/view2" />
+
+
+    <EditText
+        android:id="@+id/edit_nome"
+        android:layout_width="362dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/edit_text"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:padding="10dp"
+        android:hint="@string/nome"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_perfil" />
+
+    <EditText
+        android:id="@+id/edit_dt_nascimento"
+        android:layout_width="362dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/edit_text"
+        android:inputType="date"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:padding="10dp"
+        android:hint="@string/dtnascimento"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_nome" />
+
+    <EditText
+        android:id="@+id/edit_sexo"
+        android:layout_width="362dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/edit_text"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:padding="10dp"
+        android:hint="@string/sexo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_dt_nascimento" />
+
+    <EditText
+        android:id="@+id/edit_altura"
+        android:layout_width="362dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/edit_text"
+        android:inputType="numberDecimal"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:padding="10dp"
+        android:hint="@string/altura"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_sexo" />
+
+    <EditText
+        android:id="@+id/edit_peso"
+        android:layout_width="362dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/edit_text"
+        android:inputType="numberDecimal"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:padding="10dp"
+        android:hint="@string/peso"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_altura" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_salvar"
+        style="@style/Button_Perfil"
+        android:layout_width="193dp"
+        android:layout_height="74dp"
+        android:layout_margin="5dp"
+        android:text="@string/salvar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_peso" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        map:layout_constraintBottom_toBottomOf="parent"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintHorizontal_bias="1.0"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toTopOf="parent"
+        map:layout_constraintVertical_bias="0.0"
+        tools:context=".Form_MapsMonitoramento" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="214dp"
+        android:layout_height="161dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/purple_200"
+        map:layout_constraintBottom_toBottomOf="parent"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintHorizontal_bias="0.0"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toTopOf="parent"
+        map:layout_constraintVertical_bias="0.989">
+
+        <TextView
+            android:id="@+id/barra_status_titulo_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:text="@string/barra_status_titulo"
+            android:textStyle="bold"
+            map:layout_constraintEnd_toEndOf="parent"
+            map:layout_constraintStart_toStartOf="parent"
+            map:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/velocidade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="3dp"
+            android:text="@string/velocidade_instantanea"
+            map:layout_constraintStart_toStartOf="parent"
+            map:layout_constraintTop_toBottomOf="@+id/barra_status_titulo_TextView" />
+
+        <TextView
+            android:id="@+id/velocidade_value"
+            android:layout_width="50dp"
+            android:layout_height="33dp"
+            android:layout_marginTop="16dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="0"
+            map:layout_constraintStart_toEndOf="@+id/velocidade"
+            map:layout_constraintTop_toBottomOf="@+id/barra_status_titulo_TextView" />
+
+        <TextView
+            android:id="@+id/cronometro"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="@string/cronometro"
+            map:layout_constraintStart_toStartOf="parent"
+            map:layout_constraintTop_toBottomOf="@id/velocidade" />
+
+        <TextView
+            android:id="@+id/cronometro_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="0"
+            map:layout_constraintEnd_toEndOf="parent"
+            map:layout_constraintHorizontal_bias="0.0"
+            map:layout_constraintStart_toEndOf="@+id/distancia"
+            map:layout_constraintTop_toBottomOf="@+id/distancia_value_textView" />
+
+        <TextView
+            android:id="@+id/distancia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="@string/distancia"
+            map:layout_constraintStart_toStartOf="parent"
+            map:layout_constraintTop_toBottomOf="@+id/cronometro" />
+
+        <TextView
+            android:id="@+id/distancia_value_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="0"
+            map:layout_constraintEnd_toEndOf="parent"
+            map:layout_constraintHorizontal_bias="0.024"
+            map:layout_constraintStart_toEndOf="@+id/cronometro"
+            map:layout_constraintTop_toBottomOf="@+id/velocidade_value" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/bt_Localizacao"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="532dp"
+        android:text="@string/bt_localização"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintHorizontal_bias="0.567"
+        map:layout_constraintStart_toEndOf="@+id/constraintLayout"
+        map:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/bt_iniciar"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/bt_iniciar"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintHorizontal_bias="0.567"
+        map:layout_constraintStart_toEndOf="@+id/constraintLayout"
+        map:layout_constraintTop_toBottomOf="@+id/bt_Localizacao" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/bt_parar"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/bt_parar"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintHorizontal_bias="0.567"
+        map:layout_constraintStart_toEndOf="@+id/constraintLayout"
+        map:layout_constraintTop_toBottomOf="@+id/bt_iniciar" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

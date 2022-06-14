@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "82908954624",
+    "project_id": "vidativarefazendo",
+    "storage_bucket": "vidativarefazendo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:82908954624:android:eb6714be6b0e81766018e5",
+        "android_client_info": {
+          "package_name": "com.example.vidativa_refeita"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "82908954624-12kmubhq6o54suk5h9spub7gbiogbu3h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-upytartJui11QH6z53jpbZm8prqMvPQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "82908954624-12kmubhq6o54suk5h9spub7gbiogbu3h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
