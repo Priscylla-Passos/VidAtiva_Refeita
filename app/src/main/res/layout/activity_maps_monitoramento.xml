@@ -121,8 +121,9 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/bt_Localizacao"
+        android:id="@+id/text_Localizacao"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="532dp"
@@ -141,7 +142,7 @@
         map:layout_constraintEnd_toEndOf="parent"
         map:layout_constraintHorizontal_bias="0.567"
         map:layout_constraintStart_toEndOf="@+id/constraintLayout"
-        map:layout_constraintTop_toBottomOf="@+id/bt_Localizacao" />
+        map:layout_constraintTop_toBottomOf="@+id/text_Localizacao" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/bt_parar"

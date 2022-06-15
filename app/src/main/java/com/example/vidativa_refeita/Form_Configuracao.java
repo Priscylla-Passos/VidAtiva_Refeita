@@ -6,8 +6,6 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-import android.content.DialogInterface;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -17,7 +15,7 @@ import android.widget.RadioButton;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.material.snackbar.Snackbar;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -27,7 +25,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
+
 
 public class Form_Configuracao extends AppCompatActivity {
 
@@ -44,10 +42,10 @@ public class Form_Configuracao extends AppCompatActivity {
     private final String text_vetorial = "Vetorial";
     private final String text_satelite = "Satelite";
     private String exercicio, velocidade, orientacao, tipo;
-    private String vazio = " ";
 
 
-    private Button bt_salvar, bt_limpar;
+
+    private Button bt_salvar;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     String configuracaoID;
 
@@ -68,52 +66,60 @@ public class Form_Configuracao extends AppCompatActivity {
         super.onStart();
 
         configuracaoID = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        DocumentReference documentReference = db.collection("Configuracao").document(configuracaoID);
-        documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
-            @Override
-            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException error) {
-                if (documentSnapshot == null) {
-                    AlertDialog.Builder dados = new AlertDialog.Builder(Form_Configuracao.this);
-                    dados.setTitle("Configure seus Exercicios!");
-                    dados.setPositiveButton("OK", null);
-                    dados.create().show();
+        DocumentReference documentReference = db.collection("Usuarios").document(configuracaoID);
+        if(documentReference != null) {
+            DocumentReference dados = db.collection("Configuracao").document(configuracaoID);
 
-                }else{
-                    exercicio = documentSnapshot.getString("Exercicio");
-                    velocidade = documentSnapshot.getString("Unidade de Velocidade");
-                    orientacao = documentSnapshot.getString("Orientação do Mapa");
-                    tipo = documentSnapshot.getString("Tipo do Mapa");
+            dados.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+                @Override
+                public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException error) {
+                    if (documentSnapshot != null) {
 
-                    if (exercicio.equals(text_caminhada)){
-                        caminhada.setChecked(true);
-                    }else if (exercicio.equals(text_corrida)){
-                        corrida.setChecked(true);
-                    }else if (exercicio.equals(text_bicicleta)) {
-                        bicicleta.setChecked(true);
-                    }
+                        exercicio = documentSnapshot.getString("Exercicio");
+                        velocidade = documentSnapshot.getString("Unidade de Velocidade");
+                        orientacao = documentSnapshot.getString("Orientação do Mapa");
+                        tipo = documentSnapshot.getString("Tipo do Mapa");
 
-                    if (velocidade.equals(text_km)) {
-                        km.setChecked(true);
-                    }else if (velocidade.equals(text_ms)){
-                        ms.setChecked(true);
-                    }
+                        if (text_caminhada.equalsIgnoreCase(exercicio)) {
+                            caminhada.setChecked(true);
+                        } else if (text_corrida.equalsIgnoreCase(exercicio)) {
+                            corrida.setChecked(true);
+                        } else if (text_bicicleta.equalsIgnoreCase(exercicio)) {
+                            bicicleta.setChecked(true);
+                        }
 
-                    if (orientacao.equals(text_nenhuma)){
-                        nenhuma.setChecked(true);
-                    }else if (orientacao.equals(text_north)){
-                        north.setChecked(true);
-                    }else if (orientacao.equals(text_course)){
-                        course.setChecked(true);
-                    }
+                        if (text_km.equalsIgnoreCase(velocidade)) {
+                            km.setChecked(true);
+                        } else if (text_ms.equalsIgnoreCase(velocidade)) {
+                            ms.setChecked(true);
+                        }
 
-                    if (tipo.equals(text_vetorial)){
-                        vetorial.setChecked(true);
-                    }else if (tipo.equals(text_satelite)){
-                        satelite.setChecked(true);
+                        if (text_nenhuma.equalsIgnoreCase(orientacao)) {
+                            nenhuma.setChecked(true);
+                        } else if (text_north.equalsIgnoreCase(orientacao)) {
+                            north.setChecked(true);
+                        } else if (text_course.equalsIgnoreCase(orientacao)) {
+                            course.setChecked(true);
+                        }
+
+                        if (text_vetorial.equalsIgnoreCase(tipo)) {
+                            vetorial.setChecked(true);
+                        } else if (text_satelite.equalsIgnoreCase(tipo)) {
+                            satelite.setChecked(true);
+                        }
                     }
                 }
-            }
-        });
+
+
+            });
+
+    }else{
+            AlertDialog.Builder dados = new AlertDialog.Builder(Form_Configuracao.this);
+            dados.setTitle("Configure seu Perfil!");
+            dados.setPositiveButton("OK", null);
+            dados.create().show();
+        }
+
 
 
 
@@ -170,68 +176,7 @@ public class Form_Configuracao extends AppCompatActivity {
             }
         });
 
-        bt_limpar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-                Map<String, Object> exercicio = new HashMap<>();
-                if (caminhada.isChecked()) {
-                    exercicio.put("Exercicio", " ");
-                    caminhada.setChecked(false);
-                } else if (corrida.isChecked()) {
-                    exercicio.put("Exercicio", " ");
-                    corrida.setChecked(false);
-                } else if (bicicleta.isChecked()) {
-                    exercicio.put("Exercicio", " ");
-                    bicicleta.setChecked(false);
-                }
-
-                if (km.isChecked()) {
-                    exercicio.put("Unidade de Velocidade", " ");
-                    km.setChecked(false);
-                } else if (ms.isChecked()) {
-                    exercicio.put("Unidade de Velocidade", " ");
-                    ms.setChecked(false);
-                }
-
-                if (nenhuma.isChecked()) {
-                    exercicio.put("Orientação do Mapa", " ");
-                    nenhuma.setChecked(false);
-                } else if (north.isChecked()) {
-                    exercicio.put("Orientação do Mapa", " ");
-                    north.setChecked(false);
-                } else if (course.isChecked()) {
-                    exercicio.put("Orientação do Mapa", " ");
-                    course.setChecked(false);
-                }
-
-                if (vetorial.isChecked()) {
-                    exercicio.put("Tipo do Mapa", " ");
-                    vetorial.setChecked(false);
-                } else if (satelite.isChecked()) {
-                    exercicio.put("Tipo do Mapa", " ");
-                    satelite.setChecked(false);
-                }
-
-                configuracaoID = FirebaseAuth.getInstance().getCurrentUser().getUid();
-
-                DocumentReference documentReference = db.collection("Configuracao").document(configuracaoID);
-                documentReference.set(exercicio).addOnSuccessListener(new OnSuccessListener<Void>() {
-                    public void onSuccess(Void unused) {
-                        Log.d("bd", "Sucesso ao salvar os dados");
-                    }
-                })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Log.d("bd_e", "Erro ao Salvar os Dados" + e.toString());
-                            }
-                        });
-
-            }
-        });
 
     }
 
@@ -249,7 +194,7 @@ public class Form_Configuracao extends AppCompatActivity {
         vetorial = findViewById(R.id.rb_vetorial);
         satelite = findViewById(R.id.rb_satelite);
         bt_salvar = findViewById(R.id.bt_salvar_preferencias);
-        bt_limpar = findViewById(R.id.bt_limpar_preferencias);
+
 
 
     }
