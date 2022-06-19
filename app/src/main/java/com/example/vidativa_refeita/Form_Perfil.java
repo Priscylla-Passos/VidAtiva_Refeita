@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -82,18 +83,21 @@ public class Form_Perfil extends AppCompatActivity {
                     documentReference1.set(usuarios).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
-                            Log.d("db", "Sucesso ao salvar dados"); }
+                            Log.d("db", "Sucesso ao salvar dados");
+                            Toast.makeText(Form_Perfil.this, "Salvo Com Sucesso!", Toast.LENGTH_SHORT).show();}
                     })
                             .addOnFailureListener(new OnFailureListener() {
                                 @Override
                                 public void onFailure(@NonNull Exception e) {
                                     Log.d("db_error", "Erro ao salvar dados" + e.toString());
+                                    Toast.makeText(Form_Perfil.this, "Erro Ao salvar. Tente Novamente", Toast.LENGTH_SHORT).show();
                                 }
                             });
 
 
                 }
             });
+
     }
 
 

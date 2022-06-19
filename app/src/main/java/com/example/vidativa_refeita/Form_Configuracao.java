@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
+import android.widget.Toast;
 
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -165,12 +166,14 @@ public class Form_Configuracao extends AppCompatActivity {
                 documentReference.set(exercicio).addOnSuccessListener(new OnSuccessListener<Void>() {
                     public void onSuccess(Void unused) {
                         Log.d("bd", "Sucesso ao salvar os dados");
+                        Toast.makeText(Form_Configuracao.this, "Salvo Com Sucesso!", Toast.LENGTH_SHORT).show();
                     }
                 })
                         .addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
                                 Log.d("bd_e", "Erro ao Salvar os Dados" + e.toString());
+                                Toast.makeText(Form_Configuracao.this, "Erro ao Salvar. Tente Novamente.", Toast.LENGTH_SHORT).show();
                             }
                         });
             }

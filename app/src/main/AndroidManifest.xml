@@ -44,9 +44,6 @@
             android:name=".Form_Sobre"
             android:exported="false" />
         <activity
-            android:name=".Form_Monitoramento"
-            android:exported="false" />
-        <activity
             android:name=".Form_Configuracao"
             android:exported="false" />
         <activity

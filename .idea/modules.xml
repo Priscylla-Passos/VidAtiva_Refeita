@@ -4,6 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/VidAtiva_Refeita.iml" filepath="$PROJECT_DIR$/.idea/modules/VidAtiva_Refeita.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/VidAtiva_Refeita.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/VidAtiva_Refeita.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/VidAtiva_Refeita.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/VidAtiva_Refeita.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/VidAtiva_Refeita.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/VidAtiva_Refeita.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/VidAtiva_Refeita.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/VidAtiva_Refeita.app.unitTest.iml" />
     </modules>
   </component>
 </project>
