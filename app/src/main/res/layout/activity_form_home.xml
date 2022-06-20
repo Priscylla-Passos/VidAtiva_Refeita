@@ -27,7 +27,7 @@
         android:id="@+id/gif"
         android:layout_width="386dp"
         android:layout_height="272dp"
-        android:layout_marginBottom="520dp"
+        android:layout_marginBottom="548dp"
         android:contentDescription="@string/logo"
         android:src="@drawable/logowhite"
         app:layout_constraintBottom_toBottomOf="parent"

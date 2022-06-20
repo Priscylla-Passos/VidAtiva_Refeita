@@ -24,16 +24,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/topView" />
 
+
     <View
         android:id="@+id/containerUser"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/constainer_user"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:layout_width="100dp"
@@ -44,31 +45,30 @@
         app:layout_constraintEnd_toEndOf="@id/containerUser"
         app:layout_constraintTop_toTopOf="@id/containerUser"/>
 
+
     <TextView
         android:id="@+id/text_perfil"
         android:layout_width="355dp"
         android:layout_height="50dp"
+        android:layout_marginBottom="40dp"
         android:gravity="center"
         android:text="@string/perfil"
         android:textColor="@color/black"
         android:textSize="25sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/view2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/view2" />
-
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/edit_nome"
         android:layout_width="362dp"
         android:layout_height="53dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/edit_text"
-        android:layout_marginLeft="35dp"
-        android:layout_marginRight="35dp"
-        android:padding="10dp"
         android:hint="@string/nome"
+        android:padding="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_perfil" />
 
@@ -76,14 +76,12 @@
         android:id="@+id/edit_dt_nascimento"
         android:layout_width="362dp"
         android:layout_height="53dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="15dp"
         android:background="@drawable/edit_text"
-        android:inputType="date"
-        android:layout_marginLeft="35dp"
-        android:layout_marginRight="35dp"
-        android:padding="10dp"
         android:hint="@string/dtnascimento"
+        android:inputType="date"
+        android:padding="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_nome" />
 
@@ -91,13 +89,11 @@
         android:id="@+id/edit_sexo"
         android:layout_width="362dp"
         android:layout_height="53dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="15dp"
         android:background="@drawable/edit_text"
-        android:layout_marginLeft="35dp"
-        android:layout_marginRight="35dp"
-        android:padding="10dp"
         android:hint="@string/sexo"
+        android:padding="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_dt_nascimento" />
 
@@ -105,14 +101,12 @@
         android:id="@+id/edit_altura"
         android:layout_width="362dp"
         android:layout_height="53dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="15dp"
         android:background="@drawable/edit_text"
-        android:inputType="numberDecimal"
-        android:layout_marginLeft="35dp"
-        android:layout_marginRight="35dp"
-        android:padding="10dp"
         android:hint="@string/altura"
+        android:inputType="numberDecimal"
+        android:padding="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_sexo" />
 
@@ -120,14 +114,12 @@
         android:id="@+id/edit_peso"
         android:layout_width="362dp"
         android:layout_height="53dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="15dp"
         android:background="@drawable/edit_text"
-        android:inputType="numberDecimal"
-        android:layout_marginLeft="35dp"
-        android:layout_marginRight="35dp"
-        android:padding="10dp"
         android:hint="@string/peso"
+        android:inputType="numberDecimal"
+        android:padding="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_altura" />
 

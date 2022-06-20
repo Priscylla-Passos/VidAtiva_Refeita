@@ -26,7 +26,7 @@
             <View
                 android:id="@+id/topView"
                 android:layout_width="0dp"
-                android:layout_height="30dp"
+                android:layout_height="100dp"
                 android:background="@color/purple_200"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -46,6 +46,7 @@
                 android:id="@+id/text_configuracao"
                 android:layout_width="355dp"
                 android:layout_height="50dp"
+                android:layout_marginTop="64dp"
                 android:gravity="center"
                 android:text="@string/text_configuracao"
                 android:textColor="@color/black"
@@ -53,14 +54,14 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/topView" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/text_exercicios"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="180dp"
                 android:background="@drawable/rounded_textview"
                 android:drawableLeft="@drawable/ic_exercicio"
                 android:drawablePadding="10dp"
