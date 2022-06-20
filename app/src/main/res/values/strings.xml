@@ -19,7 +19,7 @@
     <string name="creditos">CRÉDITOS</string>
     <string name="textocreditos">Este aplicativo tem como finalidade possibilitar ao usuário o monitoramento de exercícios físicos, sua posição em tempo real e a apresentação do seu histórico de exercícios ao longo do tempo. as opções de visualização são configuráveis e é possivel acessar informações de posicionamento via satelíte</string>
 
-   <!--Perfil-->
+    <!--Perfil-->
     <string name="perfil">PERFIL</string>
     <string name="nome">Nome</string>
     <string name="dtnascimento">Data de Nascimento</string>
@@ -78,4 +78,5 @@
     <string name="bt_localização">LOCALIZAR</string>
     <string name="bt_iniciar">INICIAR</string>
     <string name="bt_parar">PARAR</string>
+    <string name="title_activity_form_monitoramento">Form_Monitoramento</string>
 </resources>

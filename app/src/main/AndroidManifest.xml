@@ -3,17 +3,14 @@
     package="com.example.vidativa_refeita"
     android:installLocation="preferExternal">
 
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
-
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label=""
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.VidAtiva_Refeita" >
+        android:theme="@style/Theme.VidAtiva_Refeita">
 
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
@@ -28,12 +25,12 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyDpH5MG5DHqoMGhD4YL7KKkoLEwQU9Ma3o" />
+            android:value="AIzaSyCt4xbZfgfRA-fC4YkQLNS5urqz5YAL6VQ" />
 
         <activity
-            android:name=".Form_MapsMonitoramento"
+            android:name=".Form_Monitoramento"
             android:exported="false"
-            android:label="@string/title_activity_maps_monitoramento" />
+            android:label="@string/title_activity_form_monitoramento" />
         <activity
             android:name=".Form_Cadastro"
             android:exported="false" />
@@ -57,7 +54,7 @@
             android:exported="false" />
         <activity
             android:name=".Form_Login"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

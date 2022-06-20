@@ -2,10 +2,9 @@ package com.example.vidativa_refeita;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
-
+import androidx.loader.app.LoaderManager;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
@@ -22,13 +21,10 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.UiSettings;
-import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-
-import com.example.vidativa_refeita.databinding.ActivityMapsMonitoramentoBinding;
+import com.example.vidativa_refeita.databinding.ActivityFormMonitoramentoBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -36,36 +32,36 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
+public class Form_Monitoramento extends FragmentActivity implements OnMapReadyCallback {
 
-public class Form_MapsMonitoramento extends FragmentActivity implements OnMapReadyCallback{
-    //mapa
     private GoogleMap mMap;
-    private ActivityMapsMonitoramentoBinding binding;
-    private UiSettings settingsUi;
+    private ActivityFormMonitoramentoBinding binding;
 
-
-    //Firebase
-    FirebaseFirestore bd_configuracao = FirebaseFirestore.getInstance();
-    private String configuracao;
-
-    private String tipo_mapa;
-
-    //Atributos permissão
+    //Atributos para GPS
     private static final int REQUEST_LOCATION_UPDATES = 2;
     private FusedLocationProviderClient mFusedLocationProviderClient;
     private LocationRequest mLocationRequest;
     private LocationCallback mLocationCallback;
 
-    //Atributo Marcador
+    //Atributos Marcador
     private Marker userMarker;
 
+    //Atributos distancia, tempo
+    Location currentPosition, lastPosition;
+    boolean firstFix = true;
+    double distanciaAcumulada;
+    long initialTime, currentTime, elapseTime;
 
+    //Firebase
+    FirebaseFirestore bd_configuracao = FirebaseFirestore.getInstance();
+    private String configuracao;
+    private String tipo_mapa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityMapsMonitoramentoBinding.inflate(getLayoutInflater());
+        binding = ActivityFormMonitoramentoBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
@@ -73,17 +69,19 @@ public class Form_MapsMonitoramento extends FragmentActivity implements OnMapRea
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        startLocation();
+        startLoction();
+        initialTime = System.currentTimeMillis();
     }
 
-    private void startLocation() {
-        if (ActivityCompat.checkSelfPermission(this,Manifest.permission.ACCESS_FINE_LOCATION) ==
-                PackageManager.PERMISSION_GRANTED){
+    private void startLoction() {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)==
+         PackageManager.PERMISSION_GRANTED){
             mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
             mLocationRequest = LocationRequest.create();
-            mLocationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
+            mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
             mLocationRequest.setInterval(5*1000);
             mLocationRequest.setFastestInterval(1*1000);
+
             mLocationCallback = new LocationCallback(){
                 @Override
                 public void onLocationResult(LocationResult locationResult) {
@@ -92,12 +90,11 @@ public class Form_MapsMonitoramento extends FragmentActivity implements OnMapRea
                     updateMapPosition(location);
                 }
             };
-                mFusedLocationProviderClient.requestLocationUpdates(mLocationRequest, mLocationCallback, null);
+            mFusedLocationProviderClient.requestLocationUpdates(mLocationRequest, mLocationCallback, null);
         }else{
-            //Solicite a Permissão
             ActivityCompat.requestPermissions(this,
                     new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-            REQUEST_LOCATION_UPDATES);
+                    REQUEST_LOCATION_UPDATES);
         }
     }
 
@@ -105,10 +102,10 @@ public class Form_MapsMonitoramento extends FragmentActivity implements OnMapRea
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == REQUEST_LOCATION_UPDATES){
-            if(grantResults.length == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                startLocation();
+            if (grantResults.length == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                startLoction();
             }else{
-                Toast.makeText(this, "Sem permissão para mostrar atualizações", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Sem Permissão para mostrar atualizações da sua Localização", Toast.LENGTH_SHORT).show();
                 finish();
             }
         }
@@ -121,57 +118,55 @@ public class Form_MapsMonitoramento extends FragmentActivity implements OnMapRea
             mFusedLocationProviderClient.removeLocationUpdates(mLocationCallback);
     }
 
-    private void updateMapPosition(Location location) {
+    //atualiza posição do Mapa
+    public void updateMapPosition(Location location){
+        currentTime = System.currentTimeMillis();
+        elapseTime = currentTime-initialTime;
+        if (firstFix){
+            firstFix = false;
+            currentPosition=lastPosition=location;
+            distanciaAcumulada = 0;
+        }else{
+            lastPosition = currentPosition;
+            currentPosition = location;
+            distanciaAcumulada += currentPosition.distanceTo(lastPosition);
+
+        }
+        //colocar aqui a distancia acumulada em metros
+        //colocar aqui o temp transcorrido elapsedTime/1000
+        LatLng userPosition = new LatLng(location.getLatitude(), location.getLongitude());
         if (mMap != null){
-            LatLng userPosition = new LatLng(location.getLatitude(), location.getLongitude());
-            userMarker = mMap.addMarker(new MarkerOptions().position(userPosition).title("inicio do Treino"));
-            CameraPosition cameraPosition = new CameraPosition.Builder().zoom(55).target(userPosition).build();
-            mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+            if (userMarker == null){
+                userMarker = mMap.addMarker(new MarkerOptions().position(userPosition));
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userPosition, 15f));
+            }else {
+                userMarker.setPosition(userPosition);
+                mMap.moveCamera(CameraUpdateFactory.newLatLng(userPosition));
+            }
+
         }
 
     }
-
     @Override
-    public void onMapReady(@NonNull GoogleMap googleMap) {
+    public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        UiSettings settingsUi = mMap.getUiSettings();
 
-
-
-
-
-
-        configuracao = FirebaseAuth.getInstance().getCurrentUser().getUid();
+       configuracao = FirebaseAuth.getInstance().getCurrentUser().getUid();
         DocumentReference documentReference = bd_configuracao.collection("Configuracao").document(configuracao);
 
         documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException error) {
-
-                if (documentSnapshot != null) {
-
+                if (documentSnapshot != null){
                     tipo_mapa = documentSnapshot.getString("Tipo do Mapa");
-
                     if ("Satelite".equalsIgnoreCase(tipo_mapa)){
                         mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
                     }else if ("Vetorial".equalsIgnoreCase(tipo_mapa)){
                         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
                     }
-
                 }
             }
         });
 
-
-       //Configuração dos elelmentos da interfaca gráfica
-        settingsUi.setAllGesturesEnabled(true);
-        settingsUi.setCompassEnabled(true);
-
-
-
     }
-
-
-
-
 }
