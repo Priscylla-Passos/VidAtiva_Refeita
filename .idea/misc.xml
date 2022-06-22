@@ -3,11 +3,41 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/UNIFACS/2022.1/VidAtiva_Refeita/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.225" />
+        <entry key="..\:/UNIFACS/2022.1/VidAtiva_Refeita/app/src/main/res/drawable/background_toggle.xml" value="0.21" />
+        <entry key="..\:/UNIFACS/2022.1/VidAtiva_Refeita/app/src/main/res/drawable/background_toggle_play.xml" value="0.21" />
+        <entry key="..\:/UNIFACS/2022.1/VidAtiva_Refeita/app/src/main/res/drawable/button_perfil.xml" value="0.225" />
+        <entry key="..\:/UNIFACS/2022.1/VidAtiva_Refeita/app/src/main/res/drawable/constainer_user.xml" value="0.225" />
+        <entry key="..\:/UNIFACS/2022.1/VidAtiva_Refeita/app/src/main/res/drawable/edit_text.xml" value="0.225" />
+        <entry key="..\:/UNIFACS/2022.1/VidAtiva_Refeita/app/src/main/res/drawable/ic_add.xml" value="0.225" />
+        <entry key="..\:/UNIFACS/2022.1/VidAtiva_Refeita/app/src/main/res/drawable/ic_bike.xml" value="0.225" />
+        <entry key="..\:/UNIFACS/2022.1/VidAtiva_Refeita/app/src/main/res/drawable/ic_caminhada.xml" value="0.107" />
+        <entry key="..\:/UNIFACS/2022.1/VidAtiva_Refeita/app/src/main/res/drawable/ic_close.xml" value="0.225" />
+        <entry key="..\:/UNIFACS/2022.1/VidAtiva_Refeita/app/src/main/res/drawable/ic_exercicio.xml" value="0.225" />
+        <entry key="..\:/UNIFACS/2022.1/VidAtiva_Refeita/app/src/main/res/drawable/ic_historico_transparente.xml" value="0.225" />
+        <entry key="..\:/UNIFACS/2022.1/VidAtiva_Refeita/app/src/main/res/drawable/ic_language.xml" value="0.225" />
+        <entry key="..\:/UNIFACS/2022.1/VidAtiva_Refeita/app/src/main/res/drawable/ic_launcher_background.xml" value="0.225" />
+        <entry key="..\:/UNIFACS/2022.1/VidAtiva_Refeita/app/src/main/res/drawable/ic_lbike_teste_background.xml" value="0.122" />
+        <entry key="..\:/UNIFACS/2022.1/VidAtiva_Refeita/app/src/main/res/drawable/ic_lbike_teste_foreground.xml" value="0.122" />
+        <entry key="..\:/UNIFACS/2022.1/VidAtiva_Refeita/app/src/main/res/drawable/ic_logon.xml" value="0.225" />
+        <entry key="..\:/UNIFACS/2022.1/VidAtiva_Refeita/app/src/main/res/drawable/ic_orientacaomapa.xml" value="0.225" />
+        <entry key="..\:/UNIFACS/2022.1/VidAtiva_Refeita/app/src/main/res/drawable/ic_person.xml" value="0.225" />
+        <entry key="..\:/UNIFACS/2022.1/VidAtiva_Refeita/app/src/main/res/drawable/ic_sobre.xml" value="0.225" />
+        <entry key="..\:/UNIFACS/2022.1/VidAtiva_Refeita/app/src/main/res/drawable/ic_tipo_mapa.xml" value="0.225" />
+        <entry key="..\:/UNIFACS/2022.1/VidAtiva_Refeita/app/src/main/res/drawable/ic_user.xml" value="0.225" />
+        <entry key="..\:/UNIFACS/2022.1/VidAtiva_Refeita/app/src/main/res/drawable/ic_velocidade.xml" value="0.225" />
+        <entry key="..\:/UNIFACS/2022.1/VidAtiva_Refeita/app/src/main/res/drawable/ic_wave.xml" value="0.225" />
+        <entry key="..\:/UNIFACS/2022.1/VidAtiva_Refeita/app/src/main/res/drawable/rounded_textview.xml" value="0.225" />
+        <entry key="..\:/UNIFACS/2022.1/VidAtiva_Refeita/app/src/main/res/drawable/style_rbutton.xml" value="0.225" />
         <entry key="..\:/UNIFACS/2022.1/VidAtiva_Refeita/app/src/main/res/layout/activity_form_configuracao.xml" value="0.25416666666666665" />
         <entry key="..\:/UNIFACS/2022.1/VidAtiva_Refeita/app/src/main/res/layout/activity_form_historico.xml" value="0.25416666666666665" />
+        <entry key="..\:/UNIFACS/2022.1/VidAtiva_Refeita/app/src/main/res/layout/activity_form_historico2.xml" value="0.27291666666666664" />
         <entry key="..\:/UNIFACS/2022.1/VidAtiva_Refeita/app/src/main/res/layout/activity_form_home.xml" value="0.25416666666666665" />
-        <entry key="..\:/UNIFACS/2022.1/VidAtiva_Refeita/app/src/main/res/layout/activity_form_monitoramento.xml" value="0.25416666666666665" />
+        <entry key="..\:/UNIFACS/2022.1/VidAtiva_Refeita/app/src/main/res/layout/activity_form_monitoramento.xml" value="0.264" />
         <entry key="..\:/UNIFACS/2022.1/VidAtiva_Refeita/app/src/main/res/layout/activity_form_perfil.xml" value="0.25416666666666665" />
+        <entry key="..\:/UNIFACS/2022.1/VidAtiva_Refeita/app/src/main/res/layout/activity_form_sobre.xml" value="0.2" />
+        <entry key="..\:/UNIFACS/2022.1/VidAtiva_Refeita/app/src/main/res/mipmap-anydpi-v26/ic_lbike_teste.xml" value="0.21" />
+        <entry key="..\:/UNIFACS/2022.1/VidAtiva_Refeita/app/src/main/res/mipmap-anydpi-v26/ic_lbike_teste_round.xml" value="0.124" />
         <entry key="..\:/Users/Priscilla/AndroidStudioProjects/VidAtiva_Refeita/app/src/main/res/drawable/background.xml" value="0.2" />
         <entry key="..\:/Users/Priscilla/AndroidStudioProjects/VidAtiva_Refeita/app/src/main/res/drawable/button_perfil.xml" value="0.2385" />
         <entry key="..\:/Users/Priscilla/AndroidStudioProjects/VidAtiva_Refeita/app/src/main/res/drawable/constainer_user.xml" value="0.123" />

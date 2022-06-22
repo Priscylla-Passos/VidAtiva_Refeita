@@ -71,12 +71,18 @@
     <!--    Monitoramento-->
     <string name="title_activity_maps_monitoramento">MapsMonitoramento</string>
     <string name="barra_status_titulo">Monitoramento</string>
-    <string name="velocidade_instantanea">Velocidade Instantânea: </string>
+    <string name="velocidade_instantanea">Veloc. Instantânea: </string>
     <string name="cronometro">Cronômetro: </string>
     <string name="tempo_transcorrido">Tempo Transcorrido: </string>
     <string name="distancia">Distancia Total:</string>
-    <string name="bt_localização">LOCALIZAR</string>
-    <string name="bt_iniciar">INICIAR</string>
-    <string name="bt_parar">PARAR</string>
+    <string name="bt_salvar_monitoramento">SALVAR</string>
     <string name="title_activity_form_monitoramento">Form_Monitoramento</string>
+    <string name="bt_localização">Localização</string>
+    <string name="bt_zerar">Zerar</string>
+    <string name="bt_iniciar">Iniciar</string>
+    <string name="velocidade_m_s">m/s</string>
+    <string name="distancia_m">m</string>
+    <string name="velocidade_km_h">Km/h</string>
+    <string name="distancia_km">Km</string>
+    <string name="title_activity_form_historico2">Form_Historico2</string>
 </resources>
