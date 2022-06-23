@@ -28,45 +28,6 @@
         map:layout_constraintTop_toTopOf="parent"
         map:layout_constraintVertical_bias="0.972">
 
-        <ImageView
-            android:id="@+id/ic_bike"
-            android:layout_width="59dp"
-            android:layout_height="50dp"
-            android:src="@drawable/ic_bike"
-            android:visibility="invisible"
-            map:layout_constraintBottom_toBottomOf="parent"
-            map:layout_constraintEnd_toEndOf="@+id/ic_corrida"
-            map:layout_constraintHorizontal_bias="0.971"
-            map:layout_constraintStart_toStartOf="parent"
-            map:layout_constraintTop_toTopOf="parent"
-            map:layout_constraintVertical_bias="0.224" />
-
-        <ImageView
-            android:id="@+id/ic_caminhada"
-            android:layout_width="59dp"
-            android:layout_height="50dp"
-            android:src="@drawable/ic_caminhada"
-            android:visibility="invisible"
-            map:layout_constraintBottom_toBottomOf="parent"
-            map:layout_constraintEnd_toEndOf="@+id/ic_bike"
-            map:layout_constraintHorizontal_bias="1.0"
-            map:layout_constraintStart_toStartOf="parent"
-            map:layout_constraintTop_toTopOf="parent"
-            map:layout_constraintVertical_bias="0.224" />
-
-        <ImageView
-            android:id="@+id/ic_corrida"
-            android:layout_width="59dp"
-            android:layout_height="50dp"
-            android:src="@drawable/ic_exercicio"
-            android:visibility="invisible"
-            map:layout_constraintBottom_toBottomOf="parent"
-            map:layout_constraintEnd_toEndOf="parent"
-            map:layout_constraintHorizontal_bias="0.951"
-            map:layout_constraintStart_toStartOf="parent"
-            map:layout_constraintTop_toTopOf="parent"
-            map:layout_constraintVertical_bias="0.224" />
-
         <TextView
             android:id="@+id/velocidade_simbol"
             android:layout_width="115dp"
