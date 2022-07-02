@@ -40,13 +40,13 @@
         android:id="@+id/textVersao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="4dp"
         android:text="@string/versao"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/view2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.172"
+        app:layout_constraintHorizontal_bias="0.31"
 
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -59,10 +59,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.217"
+        app:layout_constraintHorizontal_bias="0.423"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textVersao"
-        app:layout_constraintVertical_bias="0.022" />
+        app:layout_constraintVertical_bias="0.039" />
 
     <TextView
         android:id="@+id/textdesenvolvedores"
@@ -76,81 +76,29 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.387"
+        app:layout_constraintHorizontal_bias="0.192"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textVersaoAndroid"
-        app:layout_constraintVertical_bias="0.02" />
+        app:layout_constraintVertical_bias="0.081" />
 
     <TextView
         android:id="@+id/textPriscila"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="20dp"
         android:text="Priscila Passos"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textIan"
-        app:layout_constraintTop_toBottomOf="@+id/textIan" />
-
-    <TextView
-        android:id="@+id/textJair"
-        android:layout_width="wrap_content"
-        android:layout_height="24dp"
-        android:layout_marginTop="10dp"
-        android:text="Jair Costa"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.364"
+        app:layout_constraintHorizontal_bias="0.18"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textdesenvolvedores" />
-
-    <TextView
-        android:id="@+id/textIsaque"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Isaque Silva"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textJair"
-        app:layout_constraintTop_toBottomOf="@+id/textJair" />
-
-    <TextView
-        android:id="@+id/textIan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="Ian Bagdede"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textIsaque"
-        app:layout_constraintTop_toBottomOf="@+id/textIsaque" />
-
-    <TextView
-        android:id="@+id/textVinicius"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Vinicius Bitencourt"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textPriscila"
-        app:layout_constraintTop_toBottomOf="@+id/textPriscila" />
 
     <TextView
         android:id="@+id/textcreditos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginBottom="12dp"
         android:text="@string/creditos"
         android:textAllCaps="true"
         android:textColor="@color/card4"
@@ -158,15 +106,16 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textTextocreditos"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.38"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textVinicius" />
+        app:layout_constraintTop_toBottomOf="@+id/textPriscila"
+        app:layout_constraintVertical_bias="0.875" />
 
     <TextView
         android:id="@+id/textTextocreditos"
-        android:layout_width="402dp"
-        android:layout_height="168dp"
-        android:layout_marginBottom="12dp"
+        android:layout_width="345dp"
+        android:layout_height="232dp"
+        android:layout_marginBottom="16dp"
         android:text="@string/textocreditos"
         android:textAlignment="center"
         android:textSize="18sp"
@@ -174,7 +123,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
 
-        app:layout_constraintHorizontal_bias="0.346"
         app:layout_constraintStart_toStartOf="parent" />
 
 

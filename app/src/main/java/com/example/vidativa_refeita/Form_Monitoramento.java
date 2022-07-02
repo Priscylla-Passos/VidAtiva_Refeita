@@ -1,5 +1,7 @@
 package com.example.vidativa_refeita;
 
+import static java.lang.Double.parseDouble;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
@@ -38,7 +40,6 @@ import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -80,7 +81,7 @@ public class Form_Monitoramento extends FragmentActivity implements OnMapReadyCa
     boolean firstFix = true;
     double distanciaAcumulada;
     long initialTime, currentTime, elapseTime;
-    String velocidadeMedia;
+    double velocidadeMedia;
     double velocidadeMaxima;
     double totalCalorico;
 
@@ -115,6 +116,7 @@ public class Form_Monitoramento extends FragmentActivity implements OnMapReadyCa
         //inicializar componentes e banco de Dados
         starComponents();
         getInformationBd();
+        bdUsuarios();
 
         // Cronometro
         iniCronometro();
@@ -286,12 +288,13 @@ public class Form_Monitoramento extends FragmentActivity implements OnMapReadyCa
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException error) {
                 if (documentSnapshot != null){
-                    peso = documentSnapshot.getString("Peso");
+                    peso = documentSnapshot.getDouble("Peso").toString();
                 }
 
             }
 
     });
+
 
     }
     private void starComponents(){
@@ -376,26 +379,23 @@ public class Form_Monitoramento extends FragmentActivity implements OnMapReadyCa
 
     private void salvarDadosHistorico() {
 
-                // Calculo calorico
-                String distanciaTotal = "0";
+
+                String distanciaTotal = binding.distanciaValue.getText().toString();
                 String tempo = binding.cronometroValue.getText().toString();
+                String gasto_calorico = String.valueOf(calculaGastoCalorias());
+                String velocidade = "0";
 
 
-                // Fim calculo calorico
-                if("km/h".equalsIgnoreCase( unidade_velocidade)){
-                    velocidadeMedia = distanciaTotal;
-                }else{
-                    velocidadeMedia = tempo;
-                }
+
                 FirebaseFirestore bd_historico = FirebaseFirestore.getInstance();
 
                 Map<String, Object> historico = new HashMap<>();
 
                 historico.put("Distancia Total", distanciaTotal);
                 historico.put("Tempo", tempo);
-                historico.put("Velocidade Média", velocidadeMedia);
+                historico.put("Velocidade Média", velocidade);
               //historico.put("Velocidade Máxima", )
-                historico.put("Calorias", "0");
+                historico.put("Calorias", gasto_calorico);
                 historico.put("Coordenadas", list);
 
 
@@ -450,14 +450,14 @@ public class Form_Monitoramento extends FragmentActivity implements OnMapReadyCa
             }
         }
 
-    public void calculaGastoCalorias(double totalCalorico){
+    public double  calculaGastoCalorias(){
         double vel = 0;
 
         if("m/s".equalsIgnoreCase(unidade_velocidade)){
-            double ms = Double.parseDouble(binding.velocidadeValue.getText().toString());
+            double ms = parseDouble(binding.velocidadeValue.getText().toString());
             vel = ms * 3.6;
         } else {
-            vel = Double.parseDouble(binding.velocidadeValue.getText().toString());
+            vel = parseDouble(binding.velocidadeValue.getText().toString());
         }
         double cal = 0;
 
@@ -469,7 +469,7 @@ public class Form_Monitoramento extends FragmentActivity implements OnMapReadyCa
             cal = 0.0199;
         }
 
-        cal = (Double.parseDouble(peso) * vel) * cal;
+       cal = (parseDouble(peso) * vel )* cal;
         cal = round(cal, 2);
 
         String[] minSec = binding.cronometroValue.getText().toString().split(":");
@@ -478,19 +478,35 @@ public class Form_Monitoramento extends FragmentActivity implements OnMapReadyCa
         totalCalorico = 0;
 
         if(!"00".equals(min)){
-            totalCalorico = cal * Double.parseDouble(min);
+            totalCalorico = cal * parseDouble(min);
         } else if(!"00".equals(sec)){
-            totalCalorico += cal * (Double.parseDouble(sec) / 60);
+            totalCalorico += cal * (parseDouble(sec) / 60);
         }
 
-        Log.i("cal", String.valueOf( totalCalorico ));
+        totalCalorico = round(totalCalorico, 2);
+
+
+        return totalCalorico;
 
     }
 
 
 
     public void calculomedias() {
+        //velocidade média
 
+        String distanciaTotal = binding.distanciaValue.getText().toString();
+        String tempo = binding.cronometroValue.getText().toString();
+        velocidadeMedia = parseDouble(distanciaTotal) / parseDouble(tempo);
+
+
+        if("km/h".equalsIgnoreCase( unidade_velocidade)){
+             round(velocidadeMedia, 2);
+        }else if ("m/s".equalsIgnoreCase(unidade_velocidade)){
+            round(velocidadeMedia * 3.6, 2);
+        }
+
+         //   String.valueOf(velocidadeMedia);
 
 
     }

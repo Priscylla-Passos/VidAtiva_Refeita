@@ -22,6 +22,9 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
 
+import java.text.DecimalFormat;
+import java.text.Format;
+import java.text.NumberFormat;
 import java.util.HashMap;
 import java.util.List;
 
@@ -68,15 +71,17 @@ public class Form_Historico extends FragmentActivity implements OnMapReadyCallba
                     distanciaTotal = value.getString("Distancia Total");
                     tempo = value.getString("Tempo");
                     velocidademedia = value.getString("Velocidade Média");
-                    Log.i("velocidade", velocidademedia );
-                  //  calorias = value.getString("Calorias");
+
+                    calorias = value.getString("Calorias");
                     trajetoria = (List<HashMap<String, Double>>) value.get("Coordenadas");
 
                     binding.txtDistanciaValue.setText( distanciaTotal );
                     binding.textTime.setText(tempo);
                     unidadeVelocidade = value.getString("Unidade de Velocidade");
                     binding.textVelMediaValue.setText( velocidademedia );
-                    binding.textGastoValue.setText( "0");
+
+                    binding.textGastoValue
+                            .setText(calorias);
 
                 }
             }

@@ -54,8 +54,9 @@ public class Form_Perfil extends AppCompatActivity {
                     edit_nome.setFocusable(false);
                     edit_dt_nascimento.setText(documentSnapshot.getString("Data de Nascimento"));
                     edit_sexo.setText(documentSnapshot.getString("Sexo"));
-                    edit_altura.setText(documentSnapshot.getString("Altura"));
-                    edit_peso.setText(documentSnapshot.getString("Peso"));
+                    edit_altura.setText(documentSnapshot.getDouble("Altura").toString());
+
+                    edit_peso.setText(documentSnapshot.getDouble("Peso").toString());
                 }
             }
         });
@@ -65,8 +66,10 @@ public class Form_Perfil extends AppCompatActivity {
                     String nome = edit_nome.getText().toString();
                     String dt_nascimento = edit_dt_nascimento.getText().toString();
                     String sexo = edit_sexo.getText().toString();
-                    String altura = edit_altura.getText().toString();
-                    String peso = edit_peso.getText().toString();
+                    String text_altura = edit_altura.getText().toString();
+                    Double altura = Double.parseDouble(text_altura);
+                    String text_peso = edit_peso.getText().toString();
+                    Double peso = Double.parseDouble(text_peso);
 
                     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
